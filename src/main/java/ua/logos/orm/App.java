@@ -12,7 +12,7 @@ public class App {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("mysql");
 		EntityManager em = entityManagerFactory.createEntityManager();
 		
-		
+		 
 		em.close();
 		entityManagerFactory.close();
 		
