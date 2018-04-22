@@ -12,8 +12,14 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "course")
+@NoArgsConstructor
+@Getter @Setter
 public class Course extends BaseEntity {
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,58 +43,6 @@ public class Course extends BaseEntity {
 			joinColumns = @JoinColumn(name = "course_id"),
 			inverseJoinColumns = @JoinColumn(name = "student_id"))
 	private List<Student> student = new ArrayList<Student>();
-	
-	public Course() {
-	}
-
-	public List<Student> getStudent() {
-		return student;
-	}
-
-	public void setStudent(List<Student> student) {
-		this.student = student;
-	}
-
-	public Teacher getTeacher() {
-		return teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
-	}
-
-//	public Integer getID() {
-//		return ID;
-//	}
-//
-//	public void setID(Integer iD) {
-//		ID = iD;
-//	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public BigDecimal getPrice() {
-		return price;
-	}
-
-	public void setPrice(BigDecimal price) {
-		this.price = price;
-	}
-	
 	
 	
 	

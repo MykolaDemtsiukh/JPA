@@ -10,8 +10,14 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Entity
 @Table(name = "student")
+@NoArgsConstructor
+@Getter @Setter
 public class Student extends BaseEntity {
 
 	@Column(name = "full_name")
@@ -26,31 +32,6 @@ public class Student extends BaseEntity {
 			inverseJoinColumns = @JoinColumn(name = "course_id"))
 	private List<Course> course = new ArrayList<Course>(); 
 
-	public Student() {
-	}
-
-	public List<Course> getCourse() {
-		return course;
-	}
-
-	public void setCourse(List<Course> course) {
-		this.course = course;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
 	
 	
 }
